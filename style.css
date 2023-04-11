@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  list-style: none;
+  text-decoration: none;
+
+  }
+
+:root {
+  --red:#d63a25;
+  --white:#fff;
+  --dark:#1e1c2a;
+  }
+
+body {
+  color: var(--dark);
+  background: var(--white);
+  }
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  box-shadow: 0 0.1rem 0.5rem #ccc;
+  width: 100%;
+  background: var(--white);
+  transition: all 0.5s;
+  position: fixed;
+}
+
+.navigation .logo {
+  color: var(--red);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.logo span {
+  color: var(--dark);
+}
+
+.navigation ul {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.navigation ul li a {
+  color: var(--dark);
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.5s;
+}
+
+.navigation ul li a:hover {
+  color: var(--red);
+
+}
+
+.navigation i {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.menu {
+  cursor: pointer;
+  display: none;
+}
+/*Estes dois codigos abaixo do comentario é um código JavaScript e CSS que é usado para criar um menu responsivo em um site ou página da web.
+
+A primeira linha de código JavaScript cria uma constante chamada "menu" que armazena um elemento HTML encontrado no documento com uma classe chamada "menu". A segunda linha de código JavaScript cria uma constante chamada "NavMenu" que armazena outro elemento HTML encontrado no documento com uma classe chamada "nav-menu".
+
+A terceira linha de código JavaScript adiciona um ouvinte de eventos de clique ao elemento "menu". Quando o elemento "menu" é clicado, o código dentro da função de retorno de chamada é executado.
+
+O código dentro da função de retorno de chamada faz duas coisas. Primeiro, ele alterna a classe "ativo" no elemento "menu" usando o método "classList.toggle()". Isso significa que se a classe "ativo" estiver presente no elemento "menu", ela será removida, caso contrário, ela será adicionada. Segundo, ele faz o mesmo para o elemento "NavMenu".
+
+O código CSS define o estilo do menu quando a classe "ativo" está presente no elemento "menu". O seletor ".menu.ativo .bar:nth-child(1)" aplica um estilo específico ao primeiro elemento filho com a classe "bar" dentro do elemento "menu" quando a classe "ativo" está presente. Ele usa a propriedade "transform" para mover o elemento 8 pixels para baixo e girá-lo em 45 graus. O seletor ".menu.ativo .bar:nth-child(2)" aplica um estilo específico ao segundo elemento filho com a classe "bar" dentro do elemento "menu" quando a classe "ativo" está presente. Ele usa a propriedade "opacity" para tornar o elemento invisível. O seletor ".menu.ativo .bar:nth-child(3)" aplica um estilo específico ao terceiro elemento filho com a classe "bar" dentro do elemento "menu" quando a classe "ativo" está presente. Ele usa a propriedade "transform" para mover o elemento 8 pixels para cima e girá-lo em -45 graus.
+
+Em resumo, esse código cria um menu responsivo que aparece quando o elemento "menu" é clicado e aplica um estilo específico aos elementos filhos dentro do menu quando a classe "ativo" está presente.*/
+.menu.ativo .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu.ativo .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu.ativo .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu .bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--dark);
+  margin: 5px auto;
+  transition: all 0.3s;
+}
+
+/*Isso abaixo é um código de estilo para um menu. A primeira linha significa que estamos selecionando o primeiro e o terceiro elemento com a classe "bar" dentro do elemento com a classe "menu". O fundo desses elementos será preenchido com a cor vermelha*/
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3){
+  background: var(--red);
+}
+
+/* O codigo abaixo está dizendo que esse elemento deve ocupar toda a extensão horizontal da tela e toda a extensão vertical da tela, para que preencha toda a área visível. Além disso, ele deve ter um comportamento flexível, com os elementos dentro dele alinhados verticalmente no centro e distribuídos de forma equilibrada horizontalmente. Por fim, o código estabelece que haverá um espaçamento interno de 0 unidades de medida nas laterais esquerda e direita e de 10% do tamanho total na parte superior e inferior.*/
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10%px;
+}
+
+.home-text {
+  max-width: 37rem;
+
+}
+
+.home-text .text-h4 {
+  font-size: 1.5rem;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.home-text .text-h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  line-height: 4rem;
+}
+
+.home-text p {
+  margin-bottom: 4rem;
+}
+
+.home-btn {
+  padding: 15px 45px;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.5s;
+}
+
+.home-btn:hover {
+  background: #fc4c35;
+}
+
+.home-img img {
+  width: 100%;
+}
+
+@media (max-width:785px) {
+  .navigation {
+    padding: 18px 20px;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background: var(--white);
+    gap: -10px;
+    transition: 0.3s;
+  }
+  .nav-menu.ativo {
+    right: 0;
+  }
+  .nav-item {
+    margin: 16px 0;
+  }
+  /*main*/
+  .home {
+    padding: 100px 2%;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    gap: 5rem;
+  }
+
+  .home .text-h4 {
+    font-size: 15px;
+  }
+
+  .home .text-h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .home p {
+    font-size: 15px;
+  }
+
+  .home-img {
+    width: 125%;
+  }
+}
